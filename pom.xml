@@ -42,6 +42,40 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Dependencia Spring Security Oauth -->
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>2.3.4.RELEASE</version>
+		</dependency>
+		
+		<!-- Dependencia Spring Security para JWT -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
+			<version>1.0.9.RELEASE</version>
+		</dependency>
+		
+		<!-- Dependencia JAXB (necesaria para Spring Security) solo es necesaria si se usa java 11 hacia arriba -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+		</dependency>
+		
+		<!-- Dependencia Usuario Commons -->
+		<dependency>
+			<groupId>com.lagm.springboot.app.usuarios.commons</groupId>
+			<artifactId>springboot-servicio-usuarios-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<!-- Se excluye la dependencia Spring Data JPA que está incluída dentro de Usuario Commons -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-data-jpa</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
